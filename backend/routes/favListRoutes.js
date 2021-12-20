@@ -1,14 +1,14 @@
-import express from 'express';
+import express from "express";
 import {
   getAll,
   addFav,
   byUserId,
-  updateFav
-} from '../controllers/favListController.js';
+  updateFav,
+} from "../controllers/favListController.js";
 const router = express.Router();
 
-router.get('/getFav', getAll);
-router.post('/addFav', addFav);
-router.get('/byUserId', byUserId)
-router.put('/updateFav', updateFav)
+router.get("/getFav", getAll);
+router.post("/addFav", addFav);
+router.get("/byUserId", byUserId);
+router.delete("/updateFav", updateFav);
 export default router;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
 import axios from 'axios';
+import { StateService } from '../state.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,18 +11,9 @@ import axios from 'axios';
 export class SignupPage implements OnInit {
   username: string;
   password: string;
-  constructor(private router: Router, private toastCtrl: ToastController) {}
+  constructor(private router: Router, private state: StateService) {}
 
   ngOnInit() {}
-
-  async presentToast(info: string) {
-    const toast = await this.toastCtrl.create({
-      message: info,
-      duration: 3000,
-      color: 'dark',
-    });
-    toast.present();
-  }
 
   onSignup() {
     let payload = {
@@ -33,12 +24,14 @@ export class SignupPage implements OnInit {
       axios
         .post('http://localhost:5000/api/users/register', payload)
         .then((res) => {
-          this.presentToast('Account created successfully!');
+          this.state.presentToast('Account created successfully!');
+          this.username = '';
+          this.password = '';
           this.router.navigate(['']);
           resolve(true);
         })
         .catch((error) => {
-          this.presentToast(
+          this.state.presentToast(
             'Something went wrong. Try using another username.'
           );
           resolve(false);

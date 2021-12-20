@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const FavouriteSchema = new mongoose.Schema(
   {
@@ -12,9 +12,10 @@ const FavouriteSchema = new mongoose.Schema(
       required: true,
     },
 
-    imdbId: {
+    smartId: {
       type: String,
       unique: true,
+      required: true,
     },
 
     poster: {
@@ -24,14 +25,14 @@ const FavouriteSchema = new mongoose.Schema(
 
     userId: {
       type: String,
-      required: true
+      required: true,
     },
     active: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   { timestamps: true }
 );
-const Favourites = mongoose.model('Favourites', FavouriteSchema);
+const Favourites = mongoose.model("Favourites", FavouriteSchema);
 export default Favourites;
