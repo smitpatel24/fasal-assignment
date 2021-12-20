@@ -2,15 +2,9 @@
 
 1. Clone the Repository and make sure that you have Node Packet Manager (npm), Node.js and Ionic already installed on your machine before performing the next steps.
 
-2. Go into the "fasal-assignment" folder, use cmd and change directory to "backend", then install dependencies and finally start the server locally.
-   cd backend
-   npm install
-   npm run start
+2. Go into the "fasal-assignment" folder, use cmd and change directory to "backend", then install dependencies and finally start the server locally. First "cd backend". Second "npm install". Third "npm run start"
 
-3. Keep the first cmd alive and open another cmd. Go into the "fasal-assignment" folder and change the directory to "frontend", then install dependencies and finally run the application locally.
-   cd frontend
-   npm install
-   ionic serve
+3. Keep the first cmd alive and open another cmd. Go into the "fasal-assignment" folder and change the directory to "frontend", then install dependencies and finally run the application locally. First "cd frontend". Second "npm install". Third "ionic serve".
 
 4. The backend will run on "localhost:5000" while the frontend will run on "localhost:8000" or on the next port if the first port is unavailable.
 
