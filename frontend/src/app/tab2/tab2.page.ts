@@ -47,7 +47,10 @@ export class Tab2Page {
         userId: this.state.userId,
       };
       axios
-        .post('http://localhost:5000/api/fav/addFav', payload)
+        .post(
+          'https://smit-fasal-assignment.herokuapp.com/api/fav/addFav',
+          payload
+        )
         .then((res) => {
           this.state.getFavList();
           this.state.presentToast('Movie added to Your List!');

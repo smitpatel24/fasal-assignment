@@ -25,7 +25,7 @@ export class StateService {
   getFavList() {
     return new Promise((resolve) => {
       axios
-        .get('http://localhost:5000/api/fav/byUserId', {
+        .get('https://smit-fasal-assignment.herokuapp.com/api/fav/byUserId', {
           params: { userId: this.userId },
         })
         .then((res) => {

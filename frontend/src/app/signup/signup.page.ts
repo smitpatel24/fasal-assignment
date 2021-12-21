@@ -22,7 +22,10 @@ export class SignupPage implements OnInit {
     };
     return new Promise((resolve) => {
       axios
-        .post('http://localhost:5000/api/users/register', payload)
+        .post(
+          'https://smit-fasal-assignment.herokuapp.com/api/users/register',
+          payload
+        )
         .then((res) => {
           this.state.presentToast('Account created successfully!');
           this.username = '';

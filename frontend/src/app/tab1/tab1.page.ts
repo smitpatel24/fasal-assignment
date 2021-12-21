@@ -23,9 +23,12 @@ export class Tab1Page {
   removeFromList(smartId) {
     return new Promise((resolve) => {
       axios
-        .delete('http://localhost:5000/api/fav/updateFav', {
-          params: { smartId: smartId },
-        })
+        .delete(
+          'https://smit-fasal-assignment.herokuapp.com/api/fav/updateFav',
+          {
+            params: { smartId: smartId },
+          }
+        )
         .then((res) => {
           this.state.getFavList();
           resolve(true);

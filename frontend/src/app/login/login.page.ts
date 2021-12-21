@@ -23,7 +23,10 @@ export class LoginPage implements OnInit {
     // console.log(this.username, this.password);
     return new Promise((resolve) => {
       axios
-        .post('http://localhost:5000/api/users/login', payload)
+        .post(
+          'https://smit-fasal-assignment.herokuapp.com/api/users/login',
+          payload
+        )
         .then((res) => {
           // console.log(res.data._id);
           this.state.userId = res.data._id;
